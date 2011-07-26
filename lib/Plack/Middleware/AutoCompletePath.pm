@@ -9,7 +9,7 @@ use Plack::Util::Accessor qw( names );
         my $path = $env->{PATH_INFO};
         if (length($path) == 0 || substr($path, -1, 1) eq '/') {
             for my $try (@{$self->names}) {
-                local $env->{PATH_INFO} = $path. '/'. $try;
+                local $env->{PATH_INFO} = $path. $try;
                 my $res = $self->app->($env);
                 if ($res->[0] != '404') {
                     return $res;
