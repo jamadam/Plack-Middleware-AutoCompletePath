@@ -6,8 +6,8 @@ use Plack::Util::Accessor qw( names );
     
     sub call {
         my ($self, $env) = @_;
-        my $path = $env->{PATH_INFO};
-        if (length($path) == 0 || substr($path, -1, 1) eq '/') {
+        my $path = $env->{PATH_INFO} || '/';
+        if (substr($path, -1, 1) eq '/') {
             for my $try (@{$self->names}) {
                 local $env->{PATH_INFO} = $path. $try;
                 my $res = $self->app->($env);
