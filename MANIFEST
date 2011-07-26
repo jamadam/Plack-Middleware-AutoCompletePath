@@ -1,0 +1,18 @@
+Changes
+lib/Plack/Middleware/AutoCompletePath.pm
+Makefile.PL
+MANIFEST			This list of files
+README
+share/baybridge.jpg
+share/face.jpg
+share/foo/index.htm
+share/index.html
+t/00_load.t
+t/99_pod.t
+t/99_podcoverage.t
+t/app.t
+xt/perlcritic.t
+xt/perlcriticrc
+xt/pod.t
+xt/podcoverage.t
+xt/podspell.t
